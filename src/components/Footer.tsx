@@ -24,9 +24,9 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold text-zinc-900 mb-6">Institucional</h4>
             <ul className="space-y-4 text-sm text-zinc-500">
-              <li><a href="#" className="hover:text-zinc-900 transition-colors">Termos de Uso</a></li>
-              <li><a href="#" className="hover:text-zinc-900 transition-colors">Privacidade</a></li>
-              <li><a href="#" className="hover:text-zinc-900 transition-colors">Contato</a></li>
+              <li><a href="https://app.duogovernance.com.br/termos" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 transition-colors">Termos de Uso</a></li>
+              <li><a href="https://app.duogovernance.com.br/privacidade" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 transition-colors">Privacidade</a></li>
+              <li><a href="mailto:contato@duogovernance.com.br" className="hover:text-zinc-900 transition-colors">Contato</a></li>
             </ul>
           </div>
         </div>
