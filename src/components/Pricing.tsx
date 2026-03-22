@@ -2,39 +2,9 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Check, Info } from 'lucide-react';
 import { PLANS } from '../constants';
-import { loadStripe } from '@stripe/stripe-js';
-
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 
 export const Pricing = () => {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('annual');
-
-  const handleCheckout = async (priceId: string) => {
-    try {
-      const response = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ priceId }),
-      });
-
-      const session = await response.json();
-      const stripe = await stripePromise;
-
-      if (stripe) {
-        const { error } = await (stripe as any).redirectToCheckout({
-          sessionId: session.id,
-        });
-
-        if (error) {
-          console.error(error);
-        }
-      }
-    } catch (err) {
-      console.error('Checkout error:', err);
-    }
-  };
 
   return (
     <section id="pricing" className="py-24 bg-white">
@@ -46,7 +16,6 @@ export const Pricing = () => {
           <p className="text-xl text-zinc-600 mb-10">
             Escolha o nível de proteção e antecipação ideal para sua operação.
           </p>
-
           <div className="inline-flex items-center p-1 bg-zinc-100 rounded-xl mb-8">
             <button
               onClick={() => setBillingCycle('monthly')}
@@ -66,7 +35,7 @@ export const Pricing = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {PLANS.map((plan) => (
-            <div 
+            <div
               key={plan.id}
               className={`relative p-8 lg:p-12 rounded-3xl border transition-all ${plan.isPopular ? 'border-emerald-500 shadow-2xl shadow-emerald-100 scale-105 z-10' : 'border-zinc-200 hover:border-zinc-300'}`}
             >
@@ -75,17 +44,15 @@ export const Pricing = () => {
                   Mais Completo
                 </div>
               )}
-              
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-zinc-900 mb-2">{plan.name}</h3>
                 <p className="text-zinc-500 text-sm">{plan.description}</p>
               </div>
-
               <div className="mb-8">
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-black text-zinc-900">
-                    R$ {billingCycle === 'monthly' 
-                      ? plan.monthlyPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) 
+                    R$ {billingCycle === 'monthly'
+                      ? plan.monthlyPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                       : (plan.annualPrice / 12).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                   </span>
                   <span className="text-zinc-400 font-medium">/mês</span>
@@ -96,7 +63,6 @@ export const Pricing = () => {
                   </div>
                 )}
               </div>
-
               <ul className="space-y-4 mb-10">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-zinc-600">
@@ -105,14 +71,14 @@ export const Pricing = () => {
                   </li>
                 ))}
               </ul>
-
-              <button
-                onClick={() => handleCheckout(billingCycle === 'monthly' ? plan.monthlyPriceId : plan.annualPriceId)}
-                className={`w-full py-4 rounded-xl font-bold text-lg transition-all ${plan.isPopular ? 'bg-emerald-600 text-white hover:bg-emerald-700 shadow-lg shadow-emerald-200' : 'bg-zinc-900 text-white hover:bg-zinc-800'}`}
+              <a
+                href="https://app.duogovernance.com.br/cadastro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`w-full py-4 rounded-xl font-bold text-lg transition-all text-center block ${plan.isPopular ? 'bg-emerald-600 text-white hover:bg-emerald-700 shadow-lg shadow-emerald-200' : 'bg-zinc-900 text-white hover:bg-zinc-800'}`}
               >
                 Assinar Agora
-              </button>
-              
+              </a>
               <p className="text-center text-xs text-zinc-400 mt-4 flex items-center justify-center gap-1">
                 <Info className="w-3 h-3" />
                 Checkout seguro via Stripe
