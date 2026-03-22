@@ -22,14 +22,16 @@ export const Hero = () => {
               Monitoramento contínuo. Inteligência contratual. Antecipação estratégica para empresas que operam no mercado público.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a 
-                href="#pricing"
+              <a
+                href="https://app.duogovernance.com.br/cadastro"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-4 bg-zinc-900 text-white rounded-xl font-bold text-lg hover:bg-zinc-800 transition-all flex items-center justify-center gap-2 shadow-xl shadow-zinc-200"
               >
                 Começar Agora
                 <ArrowRight className="w-5 h-5" />
               </a>
-              <a 
+              <a
                 href="#pricing"
                 className="w-full sm:w-auto px-8 py-4 bg-white text-zinc-900 border border-zinc-200 rounded-xl font-bold text-lg hover:bg-zinc-50 transition-all"
               >
@@ -40,7 +42,7 @@ export const Hero = () => {
         </div>
 
         {/* Dashboard Preview Mockup */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
