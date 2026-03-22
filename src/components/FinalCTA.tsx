@@ -12,8 +12,10 @@ export const FinalCTA = () => {
           <p className="text-xl text-emerald-50 mb-12 max-w-2xl mx-auto">
             Junte-se às empresas que já utilizam o DUO para proteger suas margens e antecipar oportunidades no mercado B2G.
           </p>
-          <a 
-            href="#pricing"
+          <a
+            href="https://app.duogovernance.com.br/cadastro"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-10 py-5 bg-white text-emerald-600 rounded-2xl font-black text-xl hover:bg-emerald-50 transition-all shadow-2xl shadow-emerald-900/20"
           >
             Assinar Agora
@@ -21,7 +23,7 @@ export const FinalCTA = () => {
           </a>
         </div>
       </div>
-      
+
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
