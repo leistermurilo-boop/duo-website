@@ -1,9 +1,7 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Problem } from './components/Problem';
-import { Mechanism } from './components/Mechanism';
-import { MaturityIndex } from './components/MaturityIndex';
+import { Features } from './components/Features';
 import { Pricing } from './components/Pricing';
 import { FAQ } from './components/FAQ';
 import { FinalCTA } from './components/FinalCTA';
@@ -15,9 +13,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <Problem />
-        <Mechanism />
-        <MaturityIndex />
+        <Features />
         <Pricing />
         <FAQ />
         <FinalCTA />
