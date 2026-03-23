@@ -7,14 +7,20 @@ export const PLANS = [
     description: "Ferramenta estratégica de proteção",
     monthlyPrice: 497.00,
     annualPrice: 4970.00,
-    monthlyPriceId: "price_core_monthly", // Placeholder
-    annualPriceId: "price_core_annual",   // Placeholder
+    monthlyPriceId: "price_core_monthly",
+    annualPriceId: "price_core_annual",
     features: [
-      "Monitoramento de margem por item",
-      "Δ Erosão",
-      "Diagnóstico de saúde contratual",
-      "Alertas críticos",
-      "Níveis até 3 no Índice de Maturidade DUO™"
+      "Contratos e itens ilimitados",
+      "Autorizações de Fornecimento",
+      "Controle de custos e margens",
+      "Alertas de vencimento",
+      "Monitoramento PNCP",
+      "3 extrações OCR por mês",
+      "Índice de Maturidade DUO™ até nível 3",
+      "Radar B2G™",
+      "Newsletter Semanal",
+      "APIs IBGE e BACEN",
+      "Cruzamento Macroeconômico"
     ]
   },
   {
@@ -23,17 +29,21 @@ export const PLANS = [
     description: "Ferramenta estratégica de antecipação",
     monthlyPrice: 647.00,
     annualPrice: 6470.00,
-    monthlyPriceId: "price_strategic_monthly", // Placeholder
-    annualPriceId: "price_strategic_annual",   // Placeholder
+    monthlyPriceId: "price_strategic_monthly",
+    annualPriceId: "price_strategic_annual",
     isPopular: true,
     features: [
-      "Tudo do Core",
+      "Contratos e itens ilimitados",
+      "Autorizações de Fornecimento",
+      "Controle de custos e margens",
+      "Alertas de vencimento",
+      "Monitoramento PNCP",
+      "OCR ilimitado",
       "Radar B2G™",
-      "Newsletter estratégica personalizada",
-      "Cruzamento macroeconômico",
-      "API PNCP",
-      "API IBGE",
-      "Níveis até 5 no Índice de Maturidade DUO™"
+      "Newsletter Semanal",
+      "APIs IBGE e BACEN",
+      "Cruzamento Macroeconômico",
+      "Índice de Maturidade DUO™ nível 5"
     ]
   }
 ];
