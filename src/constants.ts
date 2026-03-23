@@ -16,7 +16,9 @@ export const PLANS = [
       "Alertas de vencimento",
       "Monitoramento PNCP",
       "3 extrações OCR por mês",
-      "Índice de Maturidade DUO™ até nível 3",
+      "Índice de Maturidade DUO™ até nível 3"
+    ],
+    notIncluded: [
       "Radar B2G™",
       "Newsletter Semanal",
       "APIs IBGE e BACEN",
@@ -44,25 +46,34 @@ export const PLANS = [
       "APIs IBGE e BACEN",
       "Cruzamento Macroeconômico",
       "Índice de Maturidade DUO™ nível 5"
-    ]
+    ],
+    notIncluded: []
   }
 ];
 
 export const FAQS = [
   {
     question: "Como funciona o cálculo de reajuste?",
-    answer: "O DUO utiliza os índices oficiais (IPCA, IGPM, INPC) cruzados com as datas de aniversário do seu contrato, automatizando o cálculo de elegibilidade e valor projetado para o reajuste."
+    answer: "O DUO calcula automaticamente o reajuste com base nos índices oficiais (IPCA, INPC) integrados via API do BACEN, cruzando com a data de aniversário do contrato. O resultado é um valor projetado e documentado, pronto para embasar a solicitação formal ao órgão público."
   },
   {
-    question: "Integra com ERP?",
-    answer: "Sim, possuímos APIs abertas e conectores para os principais ERPs do mercado (TOTVS, SAP, Senior), permitindo a sincronização de dados de faturamento e custos."
+    question: "O que é o OCR Inteligente?",
+    answer: "Faça upload do PDF do contrato e o DUO extrai automaticamente os dados do cabeçalho e os itens em segundos. O plano Core inclui 3 extrações por mês; o plano Strategic tem OCR ilimitado."
+  },
+  {
+    question: "O que é o Radar PNCP?",
+    answer: "O Radar PNCP monitora automaticamente o portal do governo federal e detecta novos contratos publicados com o CNPJ da sua empresa — sem que você precise verificar manualmente. Disponível nos dois planos."
+  },
+  {
+    question: "O que é o Radar B2G™?",
+    answer: "O Radar B2G™ (exclusivo do plano Strategic) identifica ativamente oportunidades de novos contratos públicos com base no perfil da sua empresa, ajudando na prospecção e expansão no mercado B2G."
   },
   {
     question: "Precisa instalar algo?",
-    answer: "Não. O DUO Governance é uma plataforma 100% SaaS (Cloud), acessível via navegador de qualquer dispositivo com segurança de nível bancário."
+    answer: "Não. O DUO Governance é 100% SaaS — acesse via navegador de qualquer dispositivo. Cadastro em minutos, sem instalação, sem equipe de TI."
   },
   {
-    question: "Como funciona a implantação?",
-    answer: "Nossa implantação é assistida. Em menos de 15 dias, configuramos seus primeiros contratos e treinamos sua equipe para extrair o máximo de inteligência da ferramenta."
+    question: "Meus dados são seguros?",
+    answer: "Sim. Cada empresa tem seus dados completamente isolados por Row Level Security (RLS) no banco de dados. Nenhuma empresa acessa dados de outra. A infraestrutura roda no Supabase com criptografia em trânsito e em repouso."
   }
 ];
