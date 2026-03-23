@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, Info } from 'lucide-react';
+import { Check, X, Info } from 'lucide-react';
 import { PLANS } from '../constants';
 
 export const Pricing = () => {
@@ -27,7 +27,9 @@ export const Pricing = () => {
               className={`px-6 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${billingCycle === 'annual' ? 'bg-white text-zinc-900 shadow-sm' : 'text-zinc-500 hover:text-zinc-700'}`}
             >
               Anual
-              <span className="text-[10px] bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase tracking-wider font-black">2 meses grátis</span>
+              <span className={`text-[10px] bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase tracking-wider font-black`}>
+                2 meses grátis
+              </span>
             </button>
           </div>
         </div>
@@ -43,10 +45,12 @@ export const Pricing = () => {
                   Mais Completo
                 </div>
               )}
+
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-zinc-900 mb-2">{plan.name}</h3>
                 <p className="text-zinc-500 text-sm">{plan.description}</p>
               </div>
+
               <div className="mb-8">
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-black text-zinc-900">
@@ -62,6 +66,7 @@ export const Pricing = () => {
                   </div>
                 )}
               </div>
+
               <ul className="space-y-4 mb-10">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-zinc-600">
@@ -69,7 +74,14 @@ export const Pricing = () => {
                     {feature}
                   </li>
                 ))}
+                {(plan.notIncluded ?? []).map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-zinc-400 line-through">
+                    <X className="w-5 h-5 text-zinc-300 flex-shrink-0 mt-0.5" />
+                    {feature}
+                  </li>
+                ))}
               </ul>
+
               <a
                 href="https://app.duogovernance.com.br/cadastro"
                 target="_blank"
