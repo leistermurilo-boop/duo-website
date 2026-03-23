@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
 import { Check, Info } from 'lucide-react';
 import { PLANS } from '../constants';
 
@@ -11,10 +10,10 @@ export const Pricing = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-zinc-900 mb-6">
-            Investimento em Governança.
+            Planos simples e transparentes
           </h2>
           <p className="text-xl text-zinc-600 mb-10">
-            Escolha o nível de proteção e antecipação ideal para sua operação.
+            14 dias de trial grátis em qualquer plano. Sem cartão de crédito.
           </p>
           <div className="inline-flex items-center p-1 bg-zinc-100 rounded-xl mb-8">
             <button
@@ -66,7 +65,7 @@ export const Pricing = () => {
               <ul className="space-y-4 mb-10">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-zinc-600">
-                    <Check className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                    <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                     {feature}
                   </li>
                 ))}
@@ -77,11 +76,11 @@ export const Pricing = () => {
                 rel="noopener noreferrer"
                 className={`w-full py-4 rounded-xl font-bold text-lg transition-all text-center block ${plan.isPopular ? 'bg-emerald-600 text-white hover:bg-emerald-700 shadow-lg shadow-emerald-200' : 'bg-zinc-900 text-white hover:bg-zinc-800'}`}
               >
-                Assinar Agora
+                Começar trial grátis
               </a>
               <p className="text-center text-xs text-zinc-400 mt-4 flex items-center justify-center gap-1">
                 <Info className="w-3 h-3" />
-                Checkout seguro via Stripe
+                Sem cartão de crédito · Cancele quando quiser
               </p>
             </div>
           ))}
