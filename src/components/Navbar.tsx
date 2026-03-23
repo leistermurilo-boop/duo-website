@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { Logo } from './Logo';
 
 export const Navbar = () => {
@@ -11,17 +10,24 @@ export const Navbar = () => {
             <Logo className="h-10" />
           </div>
           <div className="hidden md:flex space-x-8 items-center">
-            <a href="#problem" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Problemas</a>
-            <a href="#mechanism" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Solução</a>
-            <a href="#maturity" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Maturidade</a>
+            <a href="#funcionalidades" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Funcionalidades</a>
             <a href="#pricing" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Planos</a>
+            <a
+              href="https://app.duogovernance.com.br/entrar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors"
+            >
+              Entrar
+            </a>
             <a
               href="https://app.duogovernance.com.br/cadastro"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-zinc-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-zinc-800 transition-all shadow-sm"
+              className="bg-zinc-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-zinc-800 transition-all shadow-sm flex items-center gap-1.5"
             >
-              Começar Agora
+              Começar grátis
+              <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
