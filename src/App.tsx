@@ -4,6 +4,7 @@ import { Hero } from './components/Hero';
 import { Problem } from './components/Problem';
 import { Mechanism } from './components/Mechanism';
 import { Features } from './components/Features';
+import { TaxRegimeEngine } from './components/TaxRegimeEngine';
 import { MaturityIndex } from './components/MaturityIndex';
 import { Pricing } from './components/Pricing';
 import { FAQ } from './components/FAQ';
@@ -19,6 +20,7 @@ export default function App() {
         <Problem />
         <Mechanism />
         <Features />
+        <TaxRegimeEngine />
         <MaturityIndex />
         <Pricing />
         <FAQ />
