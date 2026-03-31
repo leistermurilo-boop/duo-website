@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { FileText, Search, FileSearch, LayoutDashboard, Bell, TrendingUp } from 'lucide-react';
+import { FileText, Eye, FileSearch, LayoutDashboard, Bell, TrendingUp, Calculator } from 'lucide-react';
 
 const FEATURES = [
   {
@@ -9,14 +9,14 @@ const FEATURES = [
     description: 'Cadastro completo com vencimentos, renovações e histórico de alterações.',
   },
   {
-    icon: Search,
-    title: 'Radar PNCP',
-    description: 'Detecta automaticamente novos contratos publicados com seu CNPJ no portal do governo.',
+    icon: Eye,
+    title: 'Visão 360° do Contrato',
+    description: 'Acesse em um só lugar: itens, autorizações de fornecimento, entregas, reajustes, aditivos e dossiê tributário.',
   },
   {
     icon: FileSearch,
     title: 'OCR Inteligente',
-    description: 'Extrai dados de contratos em PDF com IA — cabeçalho e itens em segundos.',
+    description: 'Extrai dados de contratos em PDF com IA — cabeçalho e itens em segundos, sem digitação manual.',
   },
   {
     icon: LayoutDashboard,
@@ -31,7 +31,13 @@ const FEATURES = [
   {
     icon: TrendingUp,
     title: 'Reajuste Contratual',
-    description: 'Cálculo automático de reajuste por IPCA, INPC ou índice personalizado.',
+    description: 'Dossiê completo com variação IPCA/IGP-M via BACEN, histórico de NFs e exportação em PDF.',
+  },
+  {
+    icon: Calculator,
+    title: 'Tax Regime Engine',
+    description: 'Calcula automaticamente o impacto da Reforma Tributária em cada contrato — detecta o regime tributário vigente pela data da licitação e gera dossiê financeiro com variação de margem por item. Pronto para julho de 2026.',
+    badge: 'Exclusivo Strategic',
   },
 ];
 
@@ -55,8 +61,17 @@ export const Features = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="bg-white rounded-2xl border border-zinc-200 p-8 hover:border-emerald-200 hover:shadow-lg transition-all"
+              className={`relative bg-white rounded-2xl border p-8 hover:shadow-lg transition-all ${
+                feature.badge
+                  ? 'border-emerald-300 hover:border-emerald-400'
+                  : 'border-zinc-200 hover:border-emerald-200'
+              }`}
             >
+              {feature.badge && (
+                <span className="absolute top-4 right-4 text-[10px] font-black uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full">
+                  {feature.badge}
+                </span>
+              )}
               <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mb-5">
                 <feature.icon className="w-6 h-6 text-emerald-600" />
               </div>
